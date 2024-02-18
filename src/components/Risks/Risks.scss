@@ -1,0 +1,221 @@
+@import '../../styles/utils';
+
+.risks {
+  @include page-grid;
+  gap: 96px;
+  position: relative;
+
+  @include on-desktop {
+    padding-top: 40px;
+    gap: 149px;
+  }
+
+  &__leftSide {
+    grid-column: 1 / -1;
+    margin-inline: 55px;
+    padding: 45px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    border: 1px dashed $color-icon;
+    border-radius: 40px;
+    position: relative;
+
+    @include on-tablet {
+      margin-inline: 112px;
+      padding: 76px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      margin-inline: 120px auto;
+    }
+  }
+
+  &__shape {
+    &--1 {
+      position: absolute;
+      right: 20%;
+  
+      @include on-desktop {
+        top: -10%;
+      }
+    }
+
+    &--2 {
+      position: absolute;
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        bottom: -5%;
+        right: 10%;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__icon {
+    position: absolute;
+
+    &--1 {
+      top: -15%;
+      right: 20%;
+      width: 65px;
+
+      @include on-tablet {
+        width: 97px;
+      }
+    }
+
+    &--2 {
+      width: 63px;
+      top: 50%;
+      right: -5%;
+    }
+
+    &--3 {
+      width: 65px;
+      bottom: -15%;
+      left: 10%;
+
+      @include on-tablet {
+        width: 82px;
+        bottom: -5%;
+      }
+    }
+
+    &--4 {
+      width: 56px;
+      left: -5%;
+      top: 15%;
+    }
+
+    &--5 {
+      width: 48px;
+      top: 50%;
+      left: 10%;
+    }
+  }
+
+  &__rightSide {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+
+    @include on-tablet {
+      gap: 25px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / span 4;
+    }
+  }
+
+  &__preTitle {
+    font-size: 18px;
+    line-height: 31px;
+    text-align: center;
+    color: $color-light-orange;
+    margin: 0;
+
+    @include on-desktop {
+      text-align: start;
+      font-size: 20px;
+      line-height: 34px;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    text-align: center;
+    padding-inline: 15px;
+    margin: 0;
+    color: $color-title;
+
+    @include on-tablet {
+      padding-inline: 56px;
+
+      font-size: 50px;
+      line-height: 57px;
+    }
+
+    @include on-desktop {
+      font-size: 50px;
+      line-height: 60px;
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding-inline: 15px;
+
+    @include on-tablet {
+      padding-inline: 39px;
+    }
+
+    @include on-desktop {
+      padding: 0;
+    }
+
+    &--text {
+      color: $second-text-color;
+      margin: 0;
+      text-align: center;
+
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 33px;
+
+      @include on-desktop {
+        text-align: left;
+      }
+    }
+  }
+
+  &__reply {
+    background-color: $link-color;
+    border: 1px solid $link-color;
+    color: $color-white;
+    border-radius: 20px;
+    padding: 23px 38px;
+    display: flex;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 15px;
+
+    @include on-tablet {
+      width: 60%;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      width: 60%;
+      align-self: flex-start;
+      margin: 0;
+    }
+
+    transition: all $effect-duration;
+
+    &:hover {
+      background-color: $color-white;
+      color: $link-color;
+    }
+  }
+}

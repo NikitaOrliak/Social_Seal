@@ -1,0 +1,335 @@
+@import '../../styles/utils';
+
+.footer {
+  padding-top: 100px;
+  background-color: $main-background-color;
+  @include page-grid;
+  gap: 20px;
+
+  @include on-tablet {
+    gap: 51px 15px;
+    padding-top: 120px;
+  }
+
+  @include on-desktop {
+    padding-top: 90px;
+  }
+
+  &__forSupport {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+      grid-row: 1;
+      justify-content: start;
+      align-items: start;
+      padding-left: 39px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 2 / span 2;
+      padding: 0;
+    }
+
+    &--image {
+      margin-left: 25%;
+
+      @include on-tablet {
+        margin: 0;
+      }
+    }
+
+    &--text {
+      margin-block: 34px 8px;
+      color: #C5C7CB;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: center;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+
+    &--phone {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      color: $color-white;
+      margin: 0;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+  }
+
+  &__primaryPages {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 1;
+      justify-content: start;
+      align-items: start;
+      gap: 30px;
+      padding-right: 39px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 5 / span 2;
+      padding: 0;
+    }
+
+    &--title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      color: $color-white;
+      margin: 0;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+
+    &--list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+
+      &>li::marker {
+        color: $color-white;
+      }
+
+      @include on-tablet {
+        list-style: inherit;
+        align-items: start;
+        padding-left: 1.5em;
+      }
+    }
+
+    &--link {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 26px;
+      text-align: center;
+      color: #C5C7CB;
+      text-decoration: none;
+      display: flex;
+
+      position: relative;
+      align-self: center;
+
+      @include on-tablet {
+        text-align: left;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        height: 1px;
+        width: 100%;
+        background-color: #C5C7CB;
+
+        transition: transform $effect-duration;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__quickAccess {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+      grid-row: 2;
+      justify-content: start;
+      align-items: start;
+      gap: 30px;
+      padding-left: 39px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 7 / span 2;
+      padding: 0;
+    }
+
+    &--title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      color: $color-white;
+      margin: 0;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+
+    &--list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+
+      &>li::marker {
+        color: $color-white;
+      }
+
+      @include on-tablet {
+        list-style: inherit;
+        align-items: start;
+        padding-left: 1.5em;
+      }
+    }
+
+    &--link {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 26px;
+      text-align: center;
+      color: #C5C7CB;
+      text-decoration: none;
+      display: flex;
+
+      position: relative;
+      align-self: center;
+
+      @include on-tablet {
+        text-align: left;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        height: 1px;
+        width: 100%;
+        background-color: #C5C7CB;
+
+        transition: transform $effect-duration;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__company {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 2;
+      justify-content: start;
+      align-items: start;
+      gap: 25px;
+      padding-right: 39px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 9 / span 3;
+    }
+
+    &--title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      color: $color-white;
+      margin: 0;
+    }
+
+    &--block {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--link {
+      color: #C5C7CB;
+      text-decoration: none;
+      display: block;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 26px;
+      text-align: left;
+
+      transition: color $effect-duration;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__rights {
+    grid-column: 1 / -1;
+    background-color: #24222E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include on-desktop {
+      grid-row: 2;
+    }
+
+    &--text {
+      color: $color-white;
+      margin: 0;
+      padding-block: 21px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}

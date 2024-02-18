@@ -1,0 +1,172 @@
+@import '../../styles/utils';
+
+.consultation {
+  margin-top: 122px;
+  padding-inline: 15px;
+  @include page-grid;
+  gap: 48px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+    margin-top: 152px;
+    gap: 70px;
+  }
+
+  @include on-desktop {
+    padding-inline: 120px;
+    margin-top: 112px;
+    gap: 93px;
+  }
+
+  &__leftSide {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 7;
+      grid-row: 1;
+    }
+  }
+
+  &__preTitle {
+    display: none;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $color-light-orange;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    text-align: center;
+    color: $color-title;
+    margin: 0;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 48px;
+      margin-bottom: 38px;
+    }
+
+    @include on-desktop {
+      margin-block: 16px 25px;
+      font-size: 50px;
+      line-height: 60px;
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    margin: 0;
+    color: #666666;
+
+    @include on-desktop {
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 33px;
+      text-align: left;
+      color: #727272;
+    }
+  }
+
+  &__rightSide {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 31px 26px;
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    gap: 20px;
+    box-shadow: 0px 34px 64px 0px #141C311C;
+
+
+    &--title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: left;
+      margin-bottom: 5px;
+      color: $color-title;
+
+      @include on-tablet {
+        font-size: 28px;
+        line-height: 30px;
+      }
+
+      @include on-desktop {
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    &--input {
+      padding: 23px 29px;
+      margin: 0;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: $color-title;
+      border: 1px solid #D5D5D5;
+      border-radius: 13px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &--button {
+      background-color: $link-color;
+      color: $color-white;
+      border-radius: 13px;
+      padding: 20px;
+      cursor: pointer;
+      max-height: 62px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+      width: 100%;
+
+      border: 1px solid $link-color;
+      transition: all $effect-duration;
+
+      &:hover {
+        background-color: $color-white;
+        color: $link-color;
+      }
+    }
+  }
+}

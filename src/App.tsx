@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import { Header } from "./components/Header/Header";
+import { Navigation } from "./components/Navigation/Navigation";
+import { Partners } from "./components/Partners/Partners";
+import { Main } from "./components/Main/Main";
+import { Footer } from "./components/Footer/Footer";
 
-function App() {
+export const App = () => {
+  const [isActiveDropdown, setIsActiveDropdown] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app animated__navigation" id="home">
+      <Navigation setIsActiveDropdown={setIsActiveDropdown} />
+      <Header isActiveDropdown={isActiveDropdown} />
+      <Partners />
+      <Main />
+      <Footer /> 
     </div>
   );
 }
-
-export default App;

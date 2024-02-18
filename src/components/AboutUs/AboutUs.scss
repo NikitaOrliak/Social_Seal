@@ -1,0 +1,262 @@
+@import '../../styles/utils';
+
+.aboutUs {
+  background-color: $second-background-color;
+  @include page-grid;
+  padding-block: 160px 80px;
+  gap: 60px;
+
+  @include on-tablet {
+    padding-block: 160px 170px;
+  }
+
+  @include on-tablet {
+    padding-block: 195px 112px;
+    margin: 0 auto;
+  }
+
+  &__leftSide {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      margin-inline: 60px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      margin-inline: 120px 0;
+      align-items: start;
+    }
+  }
+
+  &__preTitle {
+    color: $color-yellow;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+    margin: 0;
+
+    @include on-tablet {
+      line-height: 22px;
+    }
+
+    @include on-desktop {
+      text-align: start;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 55px;
+    justify-self: center;
+    margin-block: 20px 28px;
+    text-align: center;
+
+    @include on-tablet {
+      margin-block: 32px;
+      font-family: Poppins;
+      font-size: 50px;
+      line-height: 66px;
+    }
+
+    @include on-desktop {
+      text-align: start;
+      white-space: nowrap;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include on-tablet {
+      gap: 25px;
+    }
+
+    &--text {
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 33px;
+      color: $color-grey;
+      text-align: center;
+      margin: 0;
+
+      @include on-tablet {
+        font-size: 18px;
+      }
+
+      @include on-desktop {
+        text-align: start;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+
+    @include on-tablet {
+      margin-top: 64px;
+      gap: 67px;
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      justify-content: start;
+    }
+  }
+
+  &__contact {
+    background-color: $link-color;
+    border: 1px solid $link-color;
+    color: $color-white;
+    border-radius: 20px;
+    padding: 23px 38px;
+    display: flex;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 15px;
+
+    transition: all $effect-duration;
+
+    &:hover {
+      background-color: $color-white;
+      color: $link-color;
+    }
+  }
+
+  &__help {
+    color: $link-color;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-self: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      height: 1px;
+      width: 100%;
+      background-color: $link-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: center;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__rightSide {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      @include page-grid;
+      margin-inline: 80px;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__block {
+    height: 220px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 20px;
+    grid-column: span 3;
+
+    @include on-tablet {
+      height: 250px;
+      width: 250px;
+
+      &:nth-child(1) {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 2;
+      }
+
+      &:nth-child(2) {
+        grid-column: 4 / span 3;
+        grid-row: 1 / span 1;
+      }
+
+      &:nth-child(3) {
+        grid-column: 1 / span 3;
+        grid-row: 2 / span 2;
+        margin-top: 9em;
+      }
+
+      &:nth-child(4) {
+        grid-column: 4 / span 3;
+        grid-row: 2 / span 1;
+      }
+
+      &:nth-child(2n + 1) {
+        justify-self: end;
+      }
+    }
+
+    &:nth-child(1)>&--counter {
+      color: #F76766;
+    }
+
+    &:nth-child(2)>&--counter {
+      color: #265FDB;
+    }
+
+    &:nth-child(3)>&--counter {
+      color: #57C0CE;
+    }
+
+    &:nth-child(4)>&--counter {
+      color: #A666F7;
+    }
+
+    &--counter {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      letter-spacing: -1px;
+      margin: 0;
+    }
+
+    &--description {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25px;
+      margin: 0;
+    }
+  }
+}

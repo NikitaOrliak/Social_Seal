@@ -1,0 +1,136 @@
+@import '../../styles/utils';
+
+.whatWeDo {
+  @include page-grid;
+  margin-top: 105px;
+  padding-inline: 15px;
+
+  @include on-tablet {
+    margin-top: 175px;
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    margin-top: 112px;
+    padding-inline: 120px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__preTitle {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    line-height: 31px;
+    text-align: center;
+    color: $color-light-orange;
+    margin: 0;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 7 / span 3;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: left;
+      margin-top: 28px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+
+    color: $color-title;
+    margin: 20px 0 32px;
+
+    @include on-tablet {
+      margin-block: 14px 21px;
+      font-size: 45px;
+      line-height: 54px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: 2;
+      font-size: 50px;
+      line-height: 60px;
+      text-align: left;
+      margin-block: 16px 25px;
+      padding-right: 1em;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include on-tablet {
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      grid-row: 1 / span 5;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    color: $second-text-color;
+    margin-top: 32px;
+
+    @include on-tablet {
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: 3;
+      font-family: Poppins;
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 33px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    background-color: $link-color;
+    border: 1px solid $link-color;
+    color: $color-white;
+    border-radius: 20px;
+    padding: 23px 38px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+
+    transition: all $effect-duration;
+
+    &:hover {
+      background-color: $color-white;
+      color: $link-color;
+    }
+
+    @include on-desktop {
+      display: flex;
+      grid-row: 4;
+      grid-column: 7 / span 3;
+      margin-top: 3em;
+    }
+  }
+}

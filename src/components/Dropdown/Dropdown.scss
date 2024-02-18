@@ -1,0 +1,136 @@
+@import '../../styles/utils';
+
+.dropdown {
+  background-color: $color-white;
+  border-top: 1px solid $low-active-color;
+  margin-top: 26px;
+  padding-top: 52px;
+  box-sizing: border-box;
+
+  @include on-tablet {
+    padding-top: 43px;
+    border-block: 1px solid $color-border;
+    @include page-grid;
+    padding-inline: 64px;
+    margin-top: 0;
+  }
+
+  @include on-tablet {
+    padding-inline: 120px;
+  }
+
+  &__categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 82px;
+    column-gap: 0;
+
+    @include on-tablet {
+      align-items: start;
+      grid-column: 1 / -1;
+      @include page-grid;
+    }
+  }
+
+  &__category {
+    grid-column: span 3;
+
+    &--name {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {
+        color: $active-color;
+      }
+    }
+  }
+
+  &__services {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  &__service {
+    display: flex;
+    gap: 12px;
+
+    &--name {
+      margin: 0;
+      text-decoration: none;
+      color: $second-text-color;
+
+
+      &:hover {
+        color: $active-color;
+      }
+    }
+
+    &--text {
+      color: $second-text-color;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &__button {
+    display: none;
+    grid-column: 1 / -1;
+
+    background-color: $color-white;
+    border: 1px solid $link-color;
+    color: $link-color;
+    border-radius: 20px;
+    padding: 28px 55px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 auto;
+    width: fit-content;
+
+    transition: all $effect-duration;
+
+    &:hover {
+      background-color: $link-color;
+      color: $color-white;
+    }
+
+    @include on-tablet {
+      display: flex;
+      justify-content: center;
+      margin-block: 59px 64px;
+    }
+
+    @include on-desktop {
+      margin-block: 44px 56px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 80%;
+      height: 1px;
+      background-color: $color-border;
+      margin-block: 28px;
+    }
+  }
+}

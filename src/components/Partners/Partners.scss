@@ -1,0 +1,46 @@
+@import '../../styles/utils';
+
+.partners {
+  position: absolute;
+  background-color: $main-background-color;
+  max-width: 1200px;
+  border-radius: 20px;
+  margin: 0 15px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  @include on-desktop {
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-block: 63px;
+    margin: 0;
+    gap: 44px;
+
+    @include on-tablet {
+      padding-inline: 100px;
+      gap: 90px;
+    }
+  }
+
+  &__image {
+    max-height: 39px;
+    display: block;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+
+    transition: transform $effect-duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

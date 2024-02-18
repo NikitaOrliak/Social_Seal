@@ -1,0 +1,234 @@
+@import '../../styles/utils';
+
+.accelerate {
+  @include page-grid;
+  padding-inline: 15px;
+  margin-block: 80px 66px;
+
+  @include on-tablet {
+    margin-block: 154px 143px;
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    margin-block: 112px;
+    padding-inline: 120px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 53px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    margin: 0;
+    color: $color-title;
+
+    @include on-tablet {
+      font-size: 71px;
+      line-height: 57px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      line-height: 77px;
+    }
+  }
+
+  &__postTitle {
+    grid-column: 1 / -1;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    color: $color-orange;
+    margin: 35px 0 9px;
+
+    @include on-tablet {
+      font-size: 49px;
+      line-height: 39px;
+      margin-block: 17px 30px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 58px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    color: #2A2A2A;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include on-desktop {
+      font-size: 29px;
+      line-height: 29px;
+    }
+  }
+
+  &__image {
+    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: -30%;
+    left: -20%;
+    z-index: -1;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      width: 70%;
+      left: 10%;
+      bottom: -50%;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 56px 49px;
+
+    @include on-tablet {
+      margin-block: 70px 61px;
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      margin-block: 88px 80px;
+    }
+
+    &--block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include on-tablet {
+        flex-direction: row;
+        border: 1px solid #EFEFEF;
+        box-shadow: 0px 34px 64px 0px #141C311C;
+        border-radius: 24px;
+        padding: 16px;
+        width: 80%;
+        justify-content: space-between;
+      }
+
+      @include on-desktop {
+        width: 50%;
+      }
+    }
+
+    &--icon {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+
+    &--input {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 30px;
+      text-align: center;
+      box-shadow: 0px 34px 64px 0px #141C311C;
+      border: 1px solid #EFEFEF;
+      border-radius: 24px 24px 0 0;
+      margin: 0;
+      padding: 15px;
+      background: inherit;
+
+      &:focus {
+        outline: none;
+      }
+
+      @include on-tablet {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        text-align: left;
+      }
+
+      @include on-desktop {
+        padding-inline: 0;
+        width: 50%;
+      }
+    }
+
+    &--button {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+      background-color: $link-color;
+      color: $color-white;
+      box-shadow: 0px 34px 64px 0px #141C311C;
+      border-radius: 0 0 24px 24px;
+      padding: 20px;
+      cursor: pointer;
+      max-height: 62px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 1px solid $link-color;
+      transition: all $effect-duration;
+
+      &:hover {
+        background-color: $color-white;
+        color: $link-color;
+      }
+
+      @include on-tablet {
+        box-shadow: none;
+        border-radius: 16px;
+        width: 33%;
+      }
+
+      &--error {
+        background-color: rgb(245, 96, 96);
+        border-color: rgb(245, 96, 96);
+        opacity: 1 !important;
+      }
+
+      &--success {
+        background-color: lightgreen;
+        border-color: lightgreen;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    color: #BBBBBB;
+
+    @include on-tablet {
+      line-height: 22px;
+    }
+
+    @include on-desktop {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
